@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+{% extends 'main.html' %}
+{%block content%}
+{% load static %}
+<style>
+     body {
+
+    background-image: url("{%static 'Images/img2.jpg'%}");
+    background-color: #cccccc;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+    table.tableview{
+        width: 100%;
+        position:absolute;
+        transition: .5s ease;
+        top: 150px;
+    }
+    img.image{
+        width: 50px;   
+    }
+    #customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+#customers tr:nth-child(odd){background-color: #f5cfcf;}
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+#customers tr:hover {background-color: #ddd;}
+#results{
+    padding-left: 300px;
+    padding-right: 280px;
+    font-size: 60px;
+    font-variant-caps:all-petite-caps;
+    font-family:-apple-system, BlinkMacSystemFont;
+    position:absolute;
+    transition: .5s ease;
+    background-color: bisque;
+    top: 0px;
+}
+</style>
+<body>
+    <table class="tableview" id="customers">
+        <tr>
+        <th></th>    
+        <th>Name</th>
+        <th>Rating</th>
+        <th>Number of Users</th>
+        <th>Location</th>
+        <th></th>
+        </tr>
+        {% for x in lawyers %}
+    <tr>
+        {% load static %}
+        <td><img src="{{ x.featured_image.url }}" class="image"></td>
+        <td>{{x.title}}</td>
+        <td>{{x.rating}}</td>
+        <td> {{x.total_users}} </td>        
+        <td> {{x.location}}</td>
+        <td><a href="{% url 'lawyer' x.id %}">View</a></td>
+        
+    </tr>
+        
+    {% endfor %}
+    </table>
+    <p id="results">Search RESULTS FOR {{y}} LAWYERS IN {{x}}</p>
+    
+{%endblock content%}
+</body>
+</html>

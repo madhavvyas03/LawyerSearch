@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+{% extends 'main.html' %}
+{%block content%}
+
+{% load static %}
+<style>
+     body {
+
+background-image: url("{%static 'Images/img2.jpg'%}");
+ background-color: #cccccc;
+ background-repeat: no-repeat;
+ background-size: cover;
+}
+    img.image{
+        width: 200px;
+        margin-top: 80px;
+        margin-left: 60px;
+    }
+    #name{
+        position:absolute;
+        top: 120px;
+        margin-left: 600px;
+        font-size: 50px;
+        font-variant-caps:all-petite-caps;
+        color: rgb(255, 251, 127);
+    }
+    #rating{
+        position:absolute;
+        top: 400px;
+        margin-left: 65px;
+        font-size: 20px;
+        color: rgb(251, 251, 251);
+    }
+    #totaluser{
+        position:absolute;
+        top: 425px;
+        margin-left: 65px;
+        font-size: 20px;
+        
+        
+        
+        color: rgb(251, 251, 251);
+    }
+    #exp{
+        position:absolute;
+        top: 450px;
+        margin-left: 65px;
+        font-size: 20px;
+        
+        
+        
+        color: rgb(251, 251, 251);
+    }
+    #language{
+        position:absolute;
+        top: 350px;
+        margin-left: 350px;
+        font-size: 18px;
+        color: rgb(251, 251, 251);
+    }
+    #practice_area{
+        position:absolute;
+        top: 380px;
+        margin-left: 350px;
+        font-size: 18px;
+        width: 1000px;
+        color: rgb(251, 251, 251);
+    }
+    #des{
+        position:absolute;
+        font-size: 18px;
+        top: 460px;
+        margin-left: 65px;
+        font-size: 40px;
+        font-variant-caps:all-petite-caps;
+        
+        color: rgb(255, 255, 255);
+    }
+    #desc{
+        position:absolute;
+        font-size: 18px;
+        top: 510px;
+        margin-left: 65px;
+        font-size:20px;
+        
+        color: rgb(251, 251, 251);
+    }
+
+
+</style>
+<body>
+    <img src="{{ lawyer.featured_image.url }}" class="image">
+    <h1 id="name">{{lawyer.title}}</h1>
+    <p id="rating">Rating : {{lawyer.rating}}</p>
+    <p id="totaluser">Total Users : {{lawyer.total_users}}</p>    
+    <p id="exp">Experience : {{lawyer.experience}} years</p>
+    <p id="language">Languages: {{ lawyer.languages.all|join:" , "}}</p>
+    <p id="practice_area"> Practice Area : {{ lawyer.practice_area.all|join:" , "}}</p>
+    <h1 id="des">Description :-</h1>
+    <p id="desc">{{lawyer.description}}</p>
+    {%endblock content%}
+</body>
+</html>

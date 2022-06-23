@@ -1,0 +1,143 @@
+{% extends 'main.html' %}
+{% block content %}
+
+    
+{% load static %}
+<style>
+    body {
+
+    background-image: url("{%static 'Images/img2.jpg'%}");
+     background-color: #cccccc;
+     background-repeat: no-repeat;
+     background-size: cover;
+    }
+    #heading{
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        position:absolute;
+        top: 50px;
+        margin-left: 30px;
+        font-size: 60px;
+        font-variant-caps:all-petite-caps;
+        color: rgb(225, 237, 250);
+    }
+    #imas{
+        width: 100%;
+    }
+    #fname{
+        
+        position: absolute;
+        top: 220px;
+        font-size: 20px; 
+        margin-left:180px ;
+    }
+    #tagname{
+        position: absolute;
+        top: 223px;
+        font-size: 20px;
+        margin-left: 35px;
+        color: aliceblue;
+    }
+    #Email{
+        position:absolute;
+        top: 260px;
+        font-size: 20px; 
+        margin-left:180px ;
+    }
+    #E_mail{
+        position:absolute;
+        top: 263px;
+        font-size: 20px;
+        margin-left: 35px;
+         color: aliceblue;
+
+    }
+    #Mobile{
+        position:absolute;
+        top: 300px;
+        font-size: 20px; 
+        margin-left:180px ;
+    }
+    #Mobil{
+        position:absolute;
+        top: 300px;
+        font-size: 20px;
+        margin-left: 35px;
+        color: aliceblue;
+
+    }
+    select.selectcity{
+    padding-left: 20px; 
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-right: 20px;
+    font-family:-apple-system, BlinkMacSystemFont;
+    position:absolute;
+    transition: .5s ease;
+    top: 350px;
+    left: 55px;
+    font-size: 15px;
+    
+    border-radius: 10px;
+  }
+  #submit{
+    padding-top: 7px;
+        padding-bottom: 7px;
+        padding-left: 50px;
+        padding-right: 50px;
+        position:absolute;
+        top: 350px;
+        left: 250px;
+        font-size: 16px;
+        font-variant-caps:all-petite-caps;
+        background-color: rgb(64, 64, 253);
+        border-radius: 10px;
+  }
+  #legaladvise{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    position:absolute;
+    top: 400px;
+    margin-left: 30px;
+    font-size: 50px;
+    font-variant-caps:all-petite-caps;
+    color: rgb(225, 237, 250);
+  }
+  #idpara{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    position:absolute;
+    top: 480px;
+    margin-left: 30px;
+    font-size: 24px;
+    font-variant-caps:all-petite-caps;
+    color: rgb(225, 237, 250);
+  }
+</style>
+{% load static %}
+
+    <!-- <img id='imas' src="{%static 'Images/image.jpg'%}"> -->
+    <h1 id="heading">Talk to a Lawyer</h1>
+    <label for="fname" id="tagname">First name :</label>
+    <input  type="text" id="fname" name="fname"><br><br>
+    <label for="Mobile" id="Mobil">Mobile Number :</label>
+    <input  type="text" id="Mobile" name="Mobile"><br><br>
+    <label for="Email" id="E_mail">Email ID : </label>
+    <input  type="text" id="Email" name="Email"><br><br>
+    <select id="scripts" name="scripts" class="selectcity" >
+        <option value="Delhi">Delhi</option>
+        <option value="Gangtok">Gangtok</option>
+        <option value="Mumbai">Mumbai</option>
+        <option value="Chennai">Chennai</option>
+        <option value="Banglore">Banglore</option>
+        <option value="Gurgaon">Gurgaon</option>
+        <option value="Noida">Noida</option>
+        <option value="Ghaziabad">Ghaziabad</option>
+        <option value="Chandigarh">Chandigarh</option>
+        <option value="Faridabad">Faridabad</option>
+    </select>
+    <a href="{% url 'projects' %}" onClick="alert('Thank You for Chosing Us . We will contact you in 2-4 business days .');"><button id="submit">Submit</button></a>
+    <h1 id="legaladvise">Get Legal Advice Over the Phone</h1>
+    <p id="idpara">Going through a divorce? Launching a business? Hurt in a car accident? Writing a will? Facing a lawsuit? In any of these situations, you may consider hiring a lawyer to advise you or represent your interests. While each state has many lawyers to choose from, choosing the right lawyer can make the difference between a pleasant and a frustrating experience. The phone advice received from legal experts can make one understand the intricacies involved in a particular case and can help the party understand his or her legal journey.
+
+        It's important to understand that a good lawyer doesn't guarantee that you'll win your case. However, having a good lawyer will give you the best chances for a favorable outcome and the comfort of knowing that you had the best legal representation. The first step in hiring a lawyer is choosing one in the practice area that is related to your legal matter because this will ensure that the lawyer is well versed in cases similar to yours.
+        
+        lawrato.com makes it easier for you to get legal advice from Top Rated Lawyers across the country. Discuss your legal issue over phone, email, schedule an office meeting, or consult with any of the listed Lawyers at your home / office. We are ready to help you, as per your convenience.</p>
+    {% endblock content %}

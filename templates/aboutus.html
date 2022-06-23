@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+{% extends 'main.html' %}
+{% block content %}
+
+    
+{% load static %}
+<style>
+    body {
+
+        background-image: url("{%static 'Images/img2.jpg'%}");
+        background-color: #cccccc;
+        background-repeat: no-repeat;
+        background-size: cover;
+}
+    #heading{
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        position:absolute;
+        top: 50px;
+        margin-left: 30px;
+        font-size: 60px;
+        font-variant-caps:all-petite-caps;
+        color: rgb(225, 237, 250);
+    }
+    #paragraph{
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        position:absolute;
+        top: 140px;
+        margin-left: 30px;
+        font-size: 24px;
+        font-variant-caps:all-petite-caps;
+        color: rgb(225, 237, 250);
+    }
+    #working{
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        position:absolute;
+        top: 250px;
+        margin-left: 30px;
+        font-size: 60px;
+        font-variant-caps:all-petite-caps;
+        color: rgb(225, 237, 250);
+    }
+    #w1{
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        position:absolute;
+        top: 340px;
+        margin-left: 30px;
+        font-size: 24px;
+        font-variant-caps:all-petite-caps;
+        color: rgb(225, 237, 250);
+    }
+    #w2{
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        position:absolute;
+        top: 380px;
+        margin-left: 30px;
+        font-size: 24px;
+        font-variant-caps:all-petite-caps;
+        color: rgb(225, 237, 250);
+    }
+    #w3{
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        position:absolute;
+        top: 420px;
+        margin-left: 30px;
+        font-size: 24px;
+        font-variant-caps:all-petite-caps;
+        color: rgb(225, 237, 250);
+    }
+    #whatkind{
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        position:absolute;
+        top: 460px;
+        margin-left: 30px;
+        font-size: 60px;
+        font-variant-caps:all-petite-caps;
+        color: rgb(225, 237, 250);
+    }
+    #para1{
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        position:absolute;
+        top: 560px;
+        margin-left: 30px;
+        font-size: 24px;
+        font-variant-caps:all-petite-caps;
+        color: rgb(225, 237, 250);
+    }
+</style>
+<body>
+    <h1 id="heading">About us</h1>
+    <p id="paragraph">
+        This is an interactive online platform that makes it faster and easier to find and hire Top Rated Lawyers in any 
+        city / court in India, because you deserve access to first-rate, professional legal advice from Top Rated 
+        Lawyers out there. We are on a mission to make the legal experience remarkable by making legal services high 
+        quality, cost-effective and on-demand for every need.
+        
+        We are not a law firm, do not provide any legal services, legal advice or "Lawyer referral services" and do 
+        not provide or participate in any legal representation.
+    </p>
+    <h1 id="working">How does it work ?</h1>
+    <p id="w1">1. Search and Select the Lawyer based on your need – Search by Specialization, City or Court Name.</p>
+    <p id="w2">2. We share your contact and enquiry details with the selected lawyer and the lawyer's contact details with you.</p>
+    <p id="w3">3. Call / meet the lawyer and discuss your legal issue directly with the selected lawyer</p>
+    <h1 id="whatkind">What kind of questions can I ask?</h1>
+    <p id="para1">
+        You can ask about anything related to your legal situation, such as questions about a specific process, documents 
+        or forms related to your legal matter, or about the meaning of specific terms or phrases. You can ask for advice, 
+        strategic coaching, or insight into possible outcomes. Advice sessions and document review services are also a 
+        good way to get a second opinion about your legal issue.</p>
+</body>
+{% endblock content %}
+</html>

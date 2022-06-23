@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lawyer Search</title>
+</head>
+<body>
+    {% extends 'main.html' %}
+{%block content%}
+{% load static %}
+<style>
+  body {
+    background-image: url("{%static 'Images/img2.jpg'%}");
+     background-color: #cccccc;
+     background-repeat: no-repeat;
+     background-size: cover;
+    }
+  button.b1{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-right: 50px;
+    padding-left: 50px;
+    font-size: 20px;
+    background-color: rgb(197, 236, 248);
+    font-variant-caps:all-petite-caps;
+    position:absolute;
+    
+    font-family:-apple-system, BlinkMacSystemFont;
+    transition: .5s ease;
+    top: 480px;
+    left: 500px;
+    border: 2px;
+    border-radius: 15px;
+  }
+  button.b2{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-right: 50px;
+    padding-left: 50px;
+    font-size: 20px;
+    
+    font-family:-apple-system, BlinkMacSystemFont;
+    background-color: rgb(197, 236, 248);
+    font-variant-caps:all-petite-caps;
+    position:absolute;
+    transition: .5s ease;
+    top: 480px;
+    left: 900px;
+    
+    font-family:-apple-system, BlinkMacSystemFont;
+    border: 2px;
+    border-radius: 15px;
+  }
+  p.lawyersheading{
+    height: 50px;
+    position:absolute;
+    transition: .5s ease;
+    top: 530px;
+    left: 355px;
+    color: antiquewhite;
+    font-family:-apple-system, BlinkMacSystemFont;
+    font-size: 60px;
+  }
+  select.selectcity{
+    padding-left: 20px; 
+    padding-top: 7px;
+    padding-bottom: 7px;
+    
+    font-family:-apple-system, BlinkMacSystemFont;
+    position:absolute;
+    transition: .5s ease;
+    top: 680px;
+    left: 565px;
+    font-size: 15px;
+  }
+  select.tag{
+    padding-left: 20px; 
+    padding-top: 7px;
+    padding-bottom: 7px;
+    
+    padding-right: 20px; 
+    
+    font-family:-apple-system, BlinkMacSystemFont;
+    position:absolute;
+    transition: .5s ease;
+    top: 680px;
+    left: 695px;
+    
+    font-size: 15px;
+  }
+  input.sear{
+    padding-left: 20px; 
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-right: 20px;
+    font-family:-apple-system, BlinkMacSystemFont;
+    position:absolute;
+    transition: .5s ease;
+    top: 680px;
+    left: 940px;
+    
+    font-size: 15px;
+  }
+</style>
+  <form action = "{% url 'hello-world' %}" method = "POST">
+  {% csrf_token %}
+  <input type="text" id="city" name="city" hidden>
+  <input type="text" id="tag" name="tag" hidden>
+  <input type="submit" value="SUBMIT" id="sear" class="sear">
+  </form>
+<div id="bottom" class="tst">
+
+  
+  <a class="button" href="{% url 'talk-to-a-lawyer' %}" ><button class="b1">Talk To a Lawyer</button></a>
+  <a class="button" href="{% url 'askaquestion' %}" ><button class="b2">Ask a Free Question</button></a>
+  <p  class="lawyersheading">SEARCH FOR TOP RATED LAWYERS</p>
+  <form action="#" method="post" id="demoForm" class="demoForm">
+  
+    <fieldsetinput>
+        <select id="scripts" name="scripts" class="selectcity" >
+          <option value="Delhi">Delhi</option>
+          <option value="Gangtok">Gangtok</option>
+          <option value="Mumbai">Mumbai</option>
+          <option value="Chennai">Chennai</option>
+          <option value="Banglore">Banglore</option>
+          <option value="Gurgaon">Gurgaon</option>
+          <option value="Noida">Noida</option>
+          <option value="Ghaziabad">Ghaziabad</option>
+          <option value="Chandigarh">Chandigarh</option>
+          <option value="Faridabad">Faridabad</option>
+      </select>
+      
+      <select id="tags" name="tags" class="tag" >
+        {% for tag in tags %}
+            <option value="{{tag.name}}">{{tag.name}}</option> 
+        {% endfor %}  
+    </select>
+    </fieldset>
+
+</div>
+
+<style>
+  button.search2{
+    padding-left: 20px;
+    padding-right: 20px; 
+    padding-top: 7px;
+    padding-bottom: 7px;
+
+    position:absolute;
+    transition: .5s ease;
+    top: 680px;
+    left: 900px;
+  }
+</style>
+
+<script type="text/javascript">
+   (function() {
+    
+     // get references to select list and display text box
+     var sel = document.getElementById('scripts');
+     var el = document.getElementById('city');
+     var another_el = document.getElementById('tag');
+     var another_sel = document.getElementById('tags');
+     function getSelectedOption(sel) {
+         var opt;
+         for ( var i = 0, len = sel.options.length; i < len; i++ ) {
+             opt = sel.options[i];
+             if ( opt.selected === true ) {
+                 break;
+             }
+         }
+         return opt;
+     }
+     function SelectedOption(another_sel) {
+         var opt;
+         for ( var i = 0, len = sel.options.length; i < len; i++ ) {
+             opt = sel.options[i];
+            if ( opt.selected === true ) {
+                 break;
+             }
+         }
+        return opt;
+     }
+     document.getElementById('sear').onclick = function () {
+         another_el.value = another_sel.options[another_sel.selectedIndex].text;
+         el.value = sel.options[sel.selectedIndex].text;
+         console.log(el.value);
+     }
+ }());
+</script> 
+
+
+{%endblock content%}
+</body>
+</html>
